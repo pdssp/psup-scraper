@@ -1,2 +1,3 @@
-# psup-scraper
-PSUP-OSUPS data scraper package
+# PSUP Scraper
+
+PSUP-OSUPS data scraper package.

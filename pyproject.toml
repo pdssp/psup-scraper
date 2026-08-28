@@ -1,0 +1,42 @@
+[project]
+name = "psup-scraper"
+version = "0.1.0"
+description = "Scraper for PSUP-OSUPS data"
+readme = "README.md"
+authors = [{ name = "Shadi Boomi", email = "shadi.boomi@universite-paris-saclay.fr" }]
+requires-python = ">=3.13"
+license = { file = "LICENSE" }
+keywords = ["gis", "planetary science", "scrapy", "stac"]
+dependencies = [
+  "pandas>=3.0.5",
+  "scrapy>=2.18.0",
+  "tombi>=1.4.1",
+  "ty>=0.0.75",
+  "typer>=0.27.1",
+]
+classifiers = ["Development Status :: 3 - Alpha", "Framework :: Scrapy", "Intended Audience :: Developers", "Intended Audience :: Science/Research", "License :: OSI Approved :: Common Development and Distribution License 1.0 (CDDL-1.0)", "Private :: Do Not Upload", "Programming Language :: Python :: 3", "Programming Language :: Python :: 3.13", "Programming Language :: Python :: 3.14", "Topic :: Scientific/Engineering :: GIS", "Topic :: Utilities", "Typing :: Typed"]
+
+[project.urls]
+Homepage = "https://github.com/pdssp/psup-scraper"
+Issues = "https://github.com/pdssp/psup-scraper/issues"
+Repository = "https://github.com/pdssp/psup-scraper"
+
+[project.scripts]
+psup-scraper = "psup_scraper.cli:app"
+
+[dependency-groups]
+dev = [
+  "prek>=0.5.0",
+  "ruff>=0.16.4",
+]
+
+[build-system]
+requires = ["uv_build>=0.11.9,<0.12.0"]
+build-backend = "uv_build"
+
+[tool.ty.src]
+include = ["src"]
+exclude = [".venv", "tests"]
+
+[tool.ty.environment]
+python = ".venv"
