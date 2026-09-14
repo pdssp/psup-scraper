@@ -32,6 +32,7 @@ jobs:
               id: tag
               run: |
                   echo "version=${GITHUB_REF#refs/*/}" >> "$GITHUB_OUTPUT"
+                  echo "version_no_v=${GITHUB_REF#refs/*/v}" >> "$GITHUB_OUTPUT"
 
             - name: Set module version
               id: module
