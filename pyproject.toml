@@ -1,6 +1,6 @@
 [project]
 name = "psup-scraper"
-version = "0.1.0"
+version = "0.1.1"
 description = "Scraper for PSUP-OSUPS data"
 readme = "README.md"
 authors = [{ name = "Shadi Boomi", email = "shadi.boomi@universite-paris-saclay.fr" }]
