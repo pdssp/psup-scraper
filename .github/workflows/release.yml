@@ -5,9 +5,12 @@ on:
     release:
         types:
             - created
+    push:
+        tags:
+            - "v*"
 
 permissions:
-    contents: read
+    contents: write # required to upload release assets (was: read)
     id-token: write # required for PyPI trusted publishing (OIDC)
 
 jobs:
@@ -44,5 +47,18 @@ jobs:
             - name: Build package
               run: uv build
 
-            - name: Publish to PyPI
-              run: uv publish
+            - name: Zip build artifacts
+              run: |
+                  cd dist
+                  zip -r "../psup-scraper-${{ steps.tag.outputs.version }}.zip" .
+                  cd ..
+
+            - name: Upload ZIP to release
+              if: github.event_name == 'release'
+              env:
+                  GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+              run: |
+                  gh release upload "${{ steps.tag.outputs.version }}" "psup-scraper-${{ steps.tag.outputs.version }}.zip"
+
+            # - name: Publish to PyPI
+            #   run: uv publish
