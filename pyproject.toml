@@ -10,8 +10,6 @@ keywords = ["gis", "planetary science", "scrapy", "stac"]
 dependencies = [
   "pandas>=3.0.5",
   "scrapy>=2.18.0",
-  "tombi>=1.4.1",
-  "ty>=0.0.75",
   "typer>=0.27.1",
 ]
 classifiers = ["Development Status :: 3 - Alpha", "Framework :: Scrapy", "Intended Audience :: Developers", "Intended Audience :: Science/Research", "License :: OSI Approved :: Common Development and Distribution License 1.0 (CDDL-1.0)", "Private :: Do Not Upload", "Programming Language :: Python :: 3", "Programming Language :: Python :: 3.13", "Programming Language :: Python :: 3.14", "Topic :: Scientific/Engineering :: GIS", "Topic :: Utilities", "Typing :: Typed"]
@@ -28,6 +26,8 @@ psup-scraper = "psup_scraper.cli:app"
 dev = [
   "prek>=0.5.0",
   "ruff>=0.16.4",
+  "tombi>=1.4.1",
+  "ty>=0.0.75",
 ]
 
 [build-system]

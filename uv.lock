@@ -750,8 +750,6 @@ source = { editable = "." }
 dependencies = [
   { name = "pandas" },
   { name = "scrapy" },
-  { name = "tombi" },
-  { name = "ty" },
   { name = "typer" },
 ]
 
@@ -759,14 +757,14 @@ dependencies = [
 dev = [
   { name = "prek" },
   { name = "ruff" },
+  { name = "tombi" },
+  { name = "ty" },
 ]
 
 [package.metadata]
 requires-dist = [
   { name = "pandas", specifier = ">=3.0.5" },
   { name = "scrapy", specifier = ">=2.18.0" },
-  { name = "tombi", specifier = ">=1.4.1" },
-  { name = "ty", specifier = ">=0.0.75" },
   { name = "typer", specifier = ">=0.27.1" },
 ]
 
@@ -774,6 +772,8 @@ requires-dist = [
 dev = [
   { name = "prek", specifier = ">=0.5.0" },
   { name = "ruff", specifier = ">=0.16.4" },
+  { name = "tombi", specifier = ">=1.4.1" },
+  { name = "ty", specifier = ">=0.0.75" },
 ]
 
 [[package]]
