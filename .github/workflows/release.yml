@@ -40,7 +40,7 @@ jobs:
                   echo "version=$(uv version --short)" >> "$GITHUB_OUTPUT"
 
             - name: Check tag matches package version
-              if: ${{ steps.tag.outputs.version != steps.module.outputs.version }}
+              if: ${{ steps.tag.outputs.version_no_v != steps.module.outputs.version }}
               run: |
                   echo "Tag (${{ steps.tag.outputs.version }}) does not match package version (${{ steps.module.outputs.version }})"
                   exit 1
