@@ -26,7 +26,7 @@ class PsupFilesSpider(scrapy.Spider):
             .as_posix()
         )
 
-    def parse(self, response: scrapy.http.Response):
+    def parse(self, response: scrapy.http.Response):  # ty: ignore[invalid-mutable-override]
         links = response.css("a")
         for link in links:
             href = link.css("::attr(href)").get()

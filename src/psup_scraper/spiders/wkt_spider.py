@@ -27,7 +27,7 @@ class WktSpiderSpider(scrapy.Spider):
         f"https://voparis-vespa-crs.obspm.fr/web/{planet}.html" for planet in PLANETS
     ]
 
-    def parse(self, response):
+    def parse(self, response):  # ty: ignore[invalid-mutable-override]
         table_caption = response.css("table").css("caption::text").get().strip()
         self.logger.info(table_caption)
 
